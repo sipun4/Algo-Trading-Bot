@@ -1,0 +1,7 @@
+flask==3.0.3
+smartapi-python==1.5.5
+pyotp
+pandas
+numpy
+logzero
+gunicorn
