@@ -1,7 +1,9 @@
 flask==3.0.3
 smartapi-python==1.5.5
+websocket-client
 pyotp
 pandas
 numpy
 logzero
 gunicorn
+requests
