@@ -536,6 +536,16 @@ def _monitor_positions():
 # ─────────────────────────────────────────────────────────
 #  FLASK ROUTES
 # ─────────────────────────────────────────────────────────
+
+@app.route("/myip")
+def myip():
+    import requests as req
+    try:
+        ip = req.get("https://api.ipify.org", timeout=5).text
+        return f"<h2>Your Render Outbound IP:</h2><h1 style='color:blue;font-family:monospace'>{ip}</h1><p>Copy this IP into Angel One SmartAPI Primary Static IP field</p>"
+    except Exception as e:
+        return f"Error: {e}", 500
+
 @app.route("/")
 @login_required
 def index():
